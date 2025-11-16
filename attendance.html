@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>School Management System</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="add-student.html">Add Student</a>
+        <a href="students.html">Students</a>
+        <a href="teachers.html">Teachers</a>
+        <a href="classes.html">Classes</a>
+        <a href="attendance.html">Attendance</a>
+    </nav>
+</header>
+
+<section>
+    <h2>Mark Attendance</h2>
+    <form id="attendanceForm">
+        <select id="studentSelect" required></select>
+        <select id="statusSelect" required>
+            <option value="">Select Status</option>
+            <option value="Present">Present</option>
+            <option value="Absent">Absent</option>
+        </select>
+        <button type="submit">Add Attendance</button>
+    </form>
+
+    <h2>Attendance Records</h2>
+    <table id="attendanceTable">
+        <thead>
+            <tr>
+                <th>Student</th>
+                <th>Status</th>
+                <th>Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Attendance records will appear here -->
+        </tbody>
+    </table>
+</section>
+
+<script src="script.js"></script>
+<script src="attendance.js"></script>
+
+</body>
+</html>
