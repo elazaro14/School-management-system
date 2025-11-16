@@ -1,17 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>School Management System</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Admin Panel - School System</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <h1>Admin Dashboard</h1>
 
-<h1>🏫 School Management System</h1>
+  <section>
+    <h2>Create Teacher Account</h2>
+    <input type="text" id="teacherName" placeholder="Teacher Name" />
+    <input type="text" id="teacherEmail" placeholder="Email" />
+    <select id="teacherRole">
+      <option value="class">Class Teacher</option>
+      <option value="subject">Subject Teacher</option>
+    </select>
+    <button onclick="createTeacher()">Create</button>
+    <ul id="teacherList"></ul>
+  </section>
 
-<div class="menu">
-  <a href="students.html">Students</a>
-  <a href="add-student.html">Add Student</a>
-</div>
+  <section>
+    <h2>Manage Classes</h2>
+    <input type="text" id="className" placeholder="Class Name" />
+    <button onclick="addClass()">Add Class</button>
+    <ul id="classList"></ul>
+  </section>
 
+  <section>
+    <h2>Manage Subjects</h2>
+    <input type="text" id="subjectName" placeholder="Subject Name" />
+    <button onclick="addSubject()">Add Subject</button>
+    <ul id="subjectList"></ul>
+  </section>
+
+  <section>
+    <h2>Upload Students</h2>
+    <select id="studentClass"></select>
+    <input type="text" id="studentName" placeholder="Student Name" />
+    <button onclick="addStudent()">Add Student</button>
+    <ul id="studentList"></ul>
+  </section>
+
+  <section>
+    <h2>Enter Grades</h2>
+    <select id="gradeClass"></select>
+    <select id="gradeStudent"></select>
+    <input type="text" id="gradeSubject" placeholder="Subject" />
+    <input type="number" id="gradeScore" placeholder="Score" />
+    <button onclick="saveGrade()">Save Grade</button>
+    <ul id="gradeList"></ul>
+  </section>
+
+  <script src="admin.js"></script>
 </body>
 </html>
