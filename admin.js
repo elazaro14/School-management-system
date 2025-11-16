@@ -123,3 +123,8 @@ loadClasses();
 loadSubjects();
 loadClassDropdowns();
 loadGrades();
+function assignSubjectToTeacher(teacherEmail, className, subjectName) {
+  let assignments = JSON.parse(localStorage.getItem("assignments")) || [];
+  assignments.push({ teacherEmail, className, subjectName });
+  localStorage.setItem("assignments", JSON.stringify(assignments));
+}
