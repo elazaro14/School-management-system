@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>School Management System</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="add-student.html">Add Student</a>
+        <a href="students.html">Students</a>
+        <a href="teachers.html">Teachers</a>
+        <a href="classes.html">Classes</a>
+        <a href="attendance.html">Attendance</a>
+        <a href="results.html">Results</a>
+    </nav>
+</header>
+
+<section>
+    <h2>Add Result</h2>
+    <form id="resultForm">
+        <select id="resultStudentSelect" required></select>
+        <input type="text" id="subject" placeholder="Subject" required>
+        <input type="number" id="marks" placeholder="Marks" required>
+        <button type="submit">Add Result</button>
+    </form>
+
+    <h2>Results Table</h2>
+    <table id="resultsTable">
+        <thead>
+            <tr>
+                <th>Student</th>
+                <th>Subject</th>
+                <th>Marks</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Results will appear here -->
+        </tbody>
+    </table>
+</section>
+
+<script src="script.js"></script>
+<script src="results.js"></script>
+
+</body>
+</html>
