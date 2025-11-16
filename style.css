@@ -1,21 +1,21 @@
 body {
   font-family: Arial;
-  background: #f4f4f4;
-  text-align: center;
   padding: 20px;
+  background: #f0f0f0;
 }
-
-.menu a {
-  display: block;
-  margin: 10px;
-  padding: 10px;
-  background: #4CAF50;
-  color: white;
-  text-decoration: none;
-  width: 200px;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 5px;
+section {
+  margin-bottom: 30px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+}
+input, select, button {
+  margin: 5px;
+  padding: 8px;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
 }
 
 table {
