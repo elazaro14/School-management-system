@@ -128,3 +128,9 @@ function assignSubjectToTeacher(teacherEmail, className, subjectName) {
   assignments.push({ teacherEmail, className, subjectName });
   localStorage.setItem("assignments", JSON.stringify(assignments));
 }
+function assign() {
+  const email = document.getElementById("assignTeacherEmail").value;
+  const cls = document.getElementById("assignClass").value;
+  const sub = document.getElementById("assignSubject").value;
+  assignSubjectToTeacher(email, cls, sub);
+}
