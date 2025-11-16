@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teachers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>School Management System</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="add-student.html">Add Student</a>
+        <a href="students.html">Students</a>
+        <a href="teachers.html">Teachers</a>
+    </nav>
+</header>
+
+<section>
+    <h2>Add Teacher</h2>
+    <form id="teacherForm">
+        <input type="text" id="teacherName" placeholder="Teacher Name" required>
+        <input type="text" id="teacherSubject" placeholder="Subject" required>
+        <button type="submit">Add Teacher</button>
+    </form>
+
+    <h2>Teacher List</h2>
+    <table id="teacherTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Subject</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Teachers will appear here -->
+        </tbody>
+    </table>
+</section>
+
+<script src="script.js"></script>
+<script src="teachers.js"></script>
+
+</body>
+</html>
