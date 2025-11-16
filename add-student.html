@@ -18,3 +18,11 @@
 <script src="script.js"></script>
 </body>
 </html>
+function loadStudents(cls) {
+  const list = document.getElementById("studentList");
+  list.innerHTML = "";
+  const students = JSON.parse(localStorage.getItem("students")) || {};
+  (students[cls] || []).forEach(s => {
+    list.innerHTML += `<li>${s.name} (${s.sex})</li>`;
+  });
+}
