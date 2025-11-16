@@ -51,3 +51,21 @@ function deleteResult(index){
 
 // Initial render
 renderResults();
+function saveGrade(email) {
+  const cls = document.getElementById("gradeClass").value;
+  const student = document.getElementById("gradeStudent").value;
+  const subject = document.getElementById("gradeSubject").value;
+  const score = document.getElementById("gradeScore").value;
+
+  const assignments = getTeacherAssignments(email);
+  const allowed = assignments.some(a => a.className === cls && a.subjectName === subject);
+  if (!allowed) {
+    alert("You are not authorized to enter grades for this subject/class.");
+    return;
+  }
+
+  let grades = JSON.parse(localStorage.getItem("grades")) || [];
+  grades.push({ cls, student, subject, score });
+  localStorage.setItem("grades", JSON.stringify(grades));
+  loadGrades();
+}
