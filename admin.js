@@ -134,3 +134,31 @@ function assign() {
   const sub = document.getElementById("assignSubject").value;
   assignSubjectToTeacher(email, cls, sub);
 }
+function importStudents() {
+  const fileInput = document.getElementById("excelFile");
+  const file = fileInput.files[0];
+  if (!file) return alert("Please select an Excel file.");
+
+  const reader = new FileReader();
+  reader.onload = function (e) {
+    const data = new Uint8Array(e.target.result);
+    const workbook = XLSX.read(data, { type: "array" });
+    const sheet = workbook.Sheets[workbook.SheetNames[0]];
+    const rows = XLSX.utils.sheet_to_json(sheet);
+
+    let students = JSON.parse(localStorage.getItem("students")) || {};
+
+    rows.forEach(row => {
+      const name = row["Name"];
+      const sex = row["Sex"];
+      const cls = row["Class"];
+      if (!students[cls]) students[cls] = [];
+      students[cls].push({ name, sex });
+    });
+
+    localStorage.setItem("students", JSON.stringify(students));
+    alert("Students imported successfully!");
+  };
+
+  reader.readAsArrayBuffer(file);
+}
