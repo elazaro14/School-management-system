@@ -31,3 +31,27 @@ window.addEventListener('load', function() {
         window.location.href = 'login.html';
     }
 });
+function getTeacherAssignments(email) {
+  const assignments = JSON.parse(localStorage.getItem("assignments")) || [];
+  return assignments.filter(a => a.teacherEmail === email);
+}
+
+function loadTeacherGrading(email) {
+  const assignments = getTeacherAssignments(email);
+  const classSelect = document.getElementById("gradeClass");
+  const subjectInput = document.getElementById("gradeSubject");
+
+  classSelect.innerHTML = "";
+  const uniqueClasses = [...new Set(assignments.map(a => a.className))];
+  uniqueClasses.forEach(c => {
+    classSelect.innerHTML += `<option value="${c}">${c}</option>`;
+  });
+
+  classSelect.addEventListener("change", function() {
+    const selectedClass = this.value;
+    const subjects = assignments
+      .filter(a => a.className === selectedClass)
+      .map(a => a.subjectName);
+    subjectInput.value = subjects[0] || "";
+  });
+}
